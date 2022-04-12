@@ -17,7 +17,6 @@ def insert_node(l: list):
     element: ListNode = None
     for i in range(len(l)-1, -1, -1):
         v = l[i]
-        next = None if not element else element
         if not element:
             element = ListNode(val=v, next=None)
         else:
@@ -25,12 +24,10 @@ def insert_node(l: list):
     return element
 
 
-
 def test_add_two_numbers():
     # ListNode{val: 2, next: ListNode{val: 4, next: ListNode{val: 3, next: None}}}
     l1, l2 = [2, 4, 3], [5, 6, 4]
     l1, l2 = insert_node(l1), insert_node(l2)
-    # assert False
     # output:ListNode = insert_node([7, 0, 8])
     assert [7, 0, 8] == Solution.addTwoNumbers(l1, l2)
     #

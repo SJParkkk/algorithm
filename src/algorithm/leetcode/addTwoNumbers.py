@@ -12,8 +12,6 @@ class ListNode:
         return f'val:{self.val} next:{self.next}'
 
     def __eq__(self, other):
-        print('eq', self.next, '||', other.next)
-        print('eq', self.val, '||', other.val)
         return (self.val == other.val) and (self.next == other.next)
 
 
