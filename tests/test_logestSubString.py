@@ -1,24 +1,25 @@
 from algorithm.leetcode.logestSubString import Solution
+from conftest import input_string, output_string
 
 
-def test_length_of_longest_substring():
+def test_length_of_longest_substring(input_string, output_string):
     sol = Solution()
-    s = "abcabcbb"
-    output = len("abc")
-    assert output == sol.lengthOfLongestSubstring(s)
+    for i, o in zip(input_string, output_string):
+        output = len(o)
+        print(i)
+        assert output == sol.lengthOfLongestSubstring(i)
 
-    s = "bbbbb"
-    output = len("b")
-    assert output == sol.lengthOfLongestSubstring(s)
 
-    s = "pwwkew"
-    output = len("wke")
-    assert output == sol.lengthOfLongestSubstring(s)
+def test_length_of_longest_substring_dict(input_string, output_string):
+    sol = Solution()
+    for i, o in zip(input_string, output_string):
+        output = len(o)
+        print(i)
+        assert output == sol.length_of_longest_substring_dict(i)
 
-    s = "au"
-    output = len("au")
-    assert output == sol.lengthOfLongestSubstring(s)
 
-    s = "aab"
-    output = len("au")
-    assert output == sol.lengthOfLongestSubstring(s)
+def test_length_of_longest_substring_index(input_string, output_string):
+    sol = Solution()
+    for i, o in zip(input_string, output_string):
+        output = len(o)
+        assert output == sol.length_of_longest_substring_index(i)
