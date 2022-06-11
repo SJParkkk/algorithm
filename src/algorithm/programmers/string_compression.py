@@ -55,6 +55,7 @@ class Compressor:
             last_letter = deq.last_letter()
             if last_letter == letter:
                 self.letter_count.setdefault(letter, 1)
+                # {'ab' : 2} # abab//cdcd//ab//cd
                 self.letter_count[letter] += 1
             else:
                 for word, count in self.letter_count.items():
@@ -62,6 +63,7 @@ class Compressor:
                     result += str(count) + word
                 self.letter_count = dict()
                 deq.push(letter)
+
         for word, count in self.letter_count.items():
             deq.pop()
             result += str(count) + word

@@ -4,6 +4,7 @@ from algorithm.programmers.keypadPress import Coordinate, solution
 def test_solution():
     numbers = [1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5]
     hand = 'right'
+    # assert False
     assert "LRLLLRLLRRL" == solution(numbers, hand)
 
     numbers = [7, 0, 8, 2, 8, 3, 1, 5, 7, 6, 2]
